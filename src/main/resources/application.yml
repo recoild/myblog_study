@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: test
+    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: ${DB_MAX_POOL_SIZE:20} # keep it as small as possible for better performance.
+      data-source-properties:
+        ApplicationName: ${spring.application.name} # show application's name when using pg_stat_activity
+        stringtype: unspecified
+        reWriteBatchedInserts: true
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc.batch_size: 50
+        order_inserts: true
+        order_updates: true
