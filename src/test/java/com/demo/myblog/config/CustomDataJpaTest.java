@@ -23,6 +23,6 @@ import java.lang.annotation.Target;
 @DataJpaTest(showSql = false)
 @ImportAutoConfiguration(value = DataSourceDecoratorAutoConfiguration.class, exclude = FlywayAutoConfiguration.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import({P6spyLogMessageFormatConfiguration.class, TestcontainersConfiguration.class})
+@Import({P6spyLogMessageFormatConfiguration.class, TestcontainersConfiguration.class, QueryDSLConfig.class})
 public @interface CustomDataJpaTest {
 }
