@@ -37,6 +37,16 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
+	//actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.3.2'
+
+	//p6spy
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.2")
+
+	//swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+	testImplementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0'
+
 }
 
 tasks.named('test') {

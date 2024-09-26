@@ -1,5 +1,6 @@
 package com.demo.myblog;
 
+import com.demo.myblog.config.TestcontainersConfiguration;
 import org.springframework.boot.SpringApplication;
 
 public class TestMyblogApplication {
